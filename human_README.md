@@ -15,19 +15,42 @@ It's just another process that an MCP-aware client (Claude Code, etc.) spawns an
 mcpKadir/
 ├── package.json            # npm workspaces root
 ├── tsconfig.base.json      # shared TS compiler options
-└── servers/
-    └── <tool-name>/
-        ├── package.json
-        ├── tsconfig.json
-        ├── src/
-        └── README.md       # spec for this tool, written for the agent that drives it
+├── servers/                # MCP tools (the "clerks" — deterministic, return evidence)
+│   └── <tool-name>/
+│       ├── package.json
+│       ├── tsconfig.json
+│       ├── src/
+│       └── README.md       # spec for this tool, written for the agent that drives it
+└── skills/                 # generic skill templates (the "judges" — the agent reasons)
+    └── <skill-name>/
+        └── SKILL.md        # procedure with a project-rules "hole" the consumer fills
 ```
+
+**Servers vs skills:** a server is code the model *calls* (deterministic, runs as a process,
+returns data). A skill is instructions the model *follows* (judgment, runs as the model's own
+reasoning). Servers gather mechanical evidence; skills weigh it. See
+[human_WORKFLOW.md](human_WORKFLOW.md) for how a consuming repo wires both in — and how you
+edit this repo from inside another project.
+
+## Docs naming convention
+
+Two audiences, two prefixes:
+
+- **`human_*.md`** — written for a person (this file, [human_WORKFLOW.md](human_WORKFLOW.md)).
+- **Everything else** — written for an **agent** to act on: per-tool `README.md`, `SKILL.md`,
+  `*.example.md` rule templates, `CLAUDE.md`. Terse, structured, no narrative fluff.
+
+The full rule (so future agents follow it when adding docs) lives in [CLAUDE.md](CLAUDE.md).
 
 ## What's in here
 
 | Server | What it does |
 | --- | --- |
 | [doc-fidelity](servers/doc-fidelity/README.md) | Flags docs that drifted from the code — broken file links, type names that got renamed or deleted. |
+
+| Skill | What it does |
+| --- | --- |
+| [doc-consistency](skills/doc-consistency/SKILL.md) | Generic judge: takes doc-fidelity's evidence + the consuming repo's own rules and rules on real vs false-positive drift. |
 
 ## Getting set up
 

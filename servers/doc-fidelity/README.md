@@ -18,7 +18,7 @@ checks below — it is intentionally narrow.
 1. **Broken references** — markdown links and bare path-like tokens in doc files,
    resolved against the repo filesystem. Anything that doesn't resolve is reported.
 2. **Missing symbols** — PascalCase tokens in doc files (heuristic match for type/class
-   names, e.g. `IBatchEngine`) that don't appear anywhere in the configured code files.
+   names, e.g. `IUserRepository`) that don't appear anywhere in the configured code files.
    Reported as likely renamed/removed.
 
 Both checks are string-based, not AST-based. Treat results as candidates to verify, not
