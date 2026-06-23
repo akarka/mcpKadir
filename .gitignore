@@ -1,3 +1,20 @@
 node_modules/
 dist/
 *.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Env
+.env
+.env.local
+
+# TypeScript build info
+*.tsbuildinfo
