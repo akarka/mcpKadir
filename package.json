@@ -1,0 +1,11 @@
+{
+  "name": "mcpkadir",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "servers/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present"
+  }
+}
