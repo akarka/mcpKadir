@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Welcome",
+    "subtitle": "Your dashboard"
+  },
+  "orders": {
+    "empty": "No orders yet"
+  }
+}

@@ -47,10 +47,12 @@ The full rule (so future agents follow it when adding docs) lives in [CLAUDE.md]
 | Server | What it does |
 | --- | --- |
 | [doc-fidelity](servers/doc-fidelity/README.md) | Flags docs that drifted from the code — broken file links, type names that got renamed or deleted. |
+| [i18n-fidelity](servers/i18n-fidelity/README.md) | Flags localization drift — hardcoded user-facing strings, keys missing across language files, and keys nothing in code references. |
 
 | Skill | What it does |
 | --- | --- |
 | [doc-consistency](skills/doc-consistency/SKILL.md) | Generic judge: takes doc-fidelity's evidence + the consuming repo's own rules and rules on real vs false-positive drift. |
+| [i18n-consistency](skills/i18n-consistency/SKILL.md) | Generic judge: takes i18n-fidelity's evidence + the consuming repo's own i18n rules and classifies each candidate as drift, false positive, or translator-gated. |
 
 ## Getting set up
 

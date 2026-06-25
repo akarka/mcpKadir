@@ -1,0 +1,22 @@
+{
+  "name": "@mcpkadir/i18n-fidelity",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "i18n-fidelity": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node test/run.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "fast-glob": "^3.3.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.7.5"
+  }
+}

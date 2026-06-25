@@ -1,0 +1,11 @@
+{
+  "home": {
+    "title": "Hoş geldiniz"
+  },
+  "orders": {
+    "empty": "Henüz sipariş yok"
+  },
+  "legacy": {
+    "removed": "eski"
+  }
+}

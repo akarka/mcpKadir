@@ -1,0 +1,7 @@
+{
+  "canonical": ["i18n/en.json"],
+  "translations": ["i18n/*.json"],
+  "code": ["src/**/*.ts"],
+  "ignore": [],
+  "minStringLength": 3
+}
